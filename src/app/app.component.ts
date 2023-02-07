@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'prj-start';
+  loadedPage = 'recipes';
+
+  onNavigate(page: string){
+    this.loadedPage = page;
+  }
 }
