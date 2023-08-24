@@ -29,6 +29,10 @@ export class RecipeEditComponent {
     });
   }
 
+  onSubmit() {
+    console.log(this.recipeForm);
+  }
+
   private initForm() {
     let recipeName = '';
     let recipeImagePath = '';
@@ -42,9 +46,9 @@ export class RecipeEditComponent {
     }
 
     this.recipeForm = new FormGroup({
-      name: new FormControl(recipeName),
-      imagePath: new FormControl(recipeImagePath),
-      description: new FormControl(recipeDescription),
+      'name': new FormControl(recipeName),
+      'imagePath': new FormControl(recipeImagePath),
+      'description': new FormControl(recipeDescription),
     });
   }
 }
