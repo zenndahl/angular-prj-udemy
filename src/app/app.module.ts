@@ -4,35 +4,29 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { RecipesComponent } from './recipes/recipes.component';
-import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
-import { RecipeItemComponent } from './recipes/recipes-list/recipe-item/recipe-item.component';
-import { ShoppingListComponent } from './shopping-list/shopping-list.component';
-import { ShoppingListEditComponent } from './shopping-list/shopping-list-edit/shopping-list-edit.component';
-import { RecipesListComponent } from './recipes/recipes-list/recipes-list.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { DropdownDirective } from './shared/dropdown.directive';
-import { RecipeService } from './recipes/recipe.service';
-import { ShoppingListService } from './shopping-list/shopping-list.service';
-import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
-import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
+import { HttpClientModule } from '@angular/common/http';
+//import { RecipesModule } from './recipes/recipes.module';
+//import { ShoppingListModule } from './shopping-list/shopping-list.module';
+//import { AuthModule } from './auth/auth.module';
+import { CoreModule } from './core.module';
+import { SharedModule } from './shared/shared.module';
+import { LoggingService } from './logging.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    RecipesComponent,
-    RecipesListComponent,
-    RecipeDetailComponent,
-    RecipeItemComponent,
-    ShoppingListComponent,
-    ShoppingListEditComponent,
-    DropdownDirective,
-    RecipeStartComponent,
-    RecipeEditComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
-  providers: [RecipeService, ShoppingListService],
+  imports: [
+    BrowserModule, // só deve ser importado uma vez, no app module
+    AppRoutingModule,
+    HttpClientModule,
+    //RecipesModule,
+    //ShoppingListModule,
+    //AuthModule,
+    SharedModule,
+    CoreModule,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
